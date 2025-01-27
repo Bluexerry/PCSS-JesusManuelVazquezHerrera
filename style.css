@@ -1,0 +1,1127 @@
+/* Variables CSS */
+:root {
+    --primary-color: #1abc9c;
+    --secondary-color: #16a085;
+    --background-color: #2c3e50;
+    --text-color: #ecf0f1;
+    --hover-color: #2ecc71;
+    --dark-background: #ecf0f1;
+    --dark-text: #2c3e50;
+    --dark-section-bg: #ffffff;
+    --dark-skill-bg: #bdc3c7;
+    --shadow-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Reset some basic elements */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    /* Fuente principal */
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background-color: var(--background-color);
+    /* Fondo oscuro complementado con particles */
+    color: var(--text-color);
+    /* Color de texto claro para contraste */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    overflow-x: hidden;
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+/* Particles.js container */
+#particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: var(--background-color);
+    background-size: cover;
+    background-position: 50% 50%;
+    z-index: -1;
+    transition: background-color 0.5s ease;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo h1 {
+    margin: 0;
+    font-size: 28px;
+    letter-spacing: 2px;
+}
+
+/* Navegación */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    padding: 0;
+    margin: 0;
+    transition: max-height 0.3s ease;
+}
+
+.nav-links.active {
+    max-height: 500px;
+    /* Suficiente para mostrar todos los enlaces */
+}
+
+.nav-links li a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.nav-links li a:hover,
+.nav-links li a:focus {
+    color: var(--primary-color);
+    outline: none;
+}
+
+.nav-links li a::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--hover-color);
+    transition: width 0.3s;
+}
+
+.nav-links li a:hover::after,
+.nav-links li a.active::after {
+    width: 100%;
+}
+
+.nav-links li a.active {
+    border-bottom: 2px solid var(--hover-color);
+    color: var(--hover-color);
+}
+
+/* Social Icons */
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icons a {
+    color: var(--text-color);
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover,
+.social-icons a:focus {
+    color: var(--primary-color);
+    outline: none;
+}
+
+/* Transiciones suaves para nav-links */
+.nav-links a.active::after {
+    width: 100%;
+}
+
+/* Main content container */
+main {
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: padding 0.5s ease;
+    margin-left: 250px;
+    /* Same as sidebar width */
+    padding: 20px;
+}
+
+/* Secciones */
+section {
+    background-color: #22303E;
+    /* Fondo completamente opaco */
+    padding: 30px 40px;
+    margin: 30px 0;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px var(--shadow-color);
+    opacity: 0;
+    /* Iniciar oculto para animación */
+    transform: translateY(30px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+    width: 100%;
+}
+
+section.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+section h2 {
+    text-align: center;
+    border-bottom: 3px solid var(--hover-color);
+    padding-bottom: 12px;
+    margin-bottom: 25px;
+    font-size: 30px;
+    color: var(--hover-color);
+}
+
+/* Habilidades */
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: space-between;
+}
+
+.skill-category {
+    background-color: var(--background-color);
+    /* Fondo sólido para ocultar partículas */
+    padding: 20px;
+    border-radius: 8px;
+    width: 48%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.skill-category:hover,
+.skill-category:focus-within {
+    transform: none;
+    /* Eliminada la transformación al pasar el ratón */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.skill-category h3 {
+    margin-bottom: 12px;
+    font-size: 22px;
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+}
+
+.skill-category h3 i {
+    margin-right: 8px;
+}
+
+.skill-category p {
+    margin: 0;
+    font-size: 16px;
+    color: #bdc3c7;
+}
+
+/* Experiencia y Educación */
+.job,
+.education-item {
+    margin-bottom: 25px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.job:hover,
+.education-item:hover,
+.job:focus-within,
+.education-item:focus-within {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.job h3,
+.education-item h3 {
+    margin-bottom: 8px;
+    font-size: 22px;
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+}
+
+.job h3 i,
+.education-item h3 i {
+    margin-right: 8px;
+}
+
+.job p,
+.education-item p {
+    margin: 0 0 12px 0;
+    font-style: italic;
+    color: #95a5a6;
+}
+
+.job ul,
+.education-item ul {
+    list-style: disc inside;
+    padding-left: 20px;
+}
+
+.job ul li,
+.education-item ul li {
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #bdc3c7;
+}
+
+/* Testimonios */
+#testimonials {
+    background-color: var(--background-color);
+}
+
+#testimonials .testimonial {
+    background-color: #34495e;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#testimonials .testimonial:hover,
+#testimonials .testimonial:focus-within {
+    background-color: var(--primary-color);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+#testimonials .testimonial p {
+    font-size: 16px;
+    color: var(--text-color);
+    margin-bottom: 10px;
+}
+
+#testimonials .testimonial h4 {
+    text-align: right;
+    font-size: 16px;
+    color: var(--hover-color);
+}
+
+/* Proyectos */
+.portfolio-filters {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.portfolio-filters button {
+    margin: 0 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--primary-color);
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.portfolio-filters button:hover,
+.portfolio-filters button:focus {
+    background-color: var(--secondary-color);
+    outline: none;
+}
+
+.projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: space-between;
+}
+
+.project {
+    background-color: var(--background-color);
+    padding: 20px;
+    border-radius: 8px;
+    width: 48%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.project:hover,
+.project:focus-within {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.project h3 {
+    margin-bottom: 8px;
+    font-size: 22px;
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+}
+
+.project h3 i {
+    margin-right: 8px;
+}
+
+.project p {
+    margin: 0;
+    font-size: 16px;
+    color: #bdc3c7;
+}
+
+.project img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.project a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+.project a i {
+    margin-right: 5px;
+}
+
+.project a:hover,
+.project a:focus {
+    color: var(--hover-color);
+    outline: none;
+}
+
+/* Blog */
+#blog {
+    background-color: var(--background-color);
+}
+
+#blog .blog-post {
+    background-color: #2c3e50;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#blog .blog-post:hover,
+#blog .blog-post:focus-within {
+    background-color: var(--primary-color);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+#blog .blog-post h3 {
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+}
+
+#blog .blog-post h3 i {
+    margin-right: 8px;
+}
+
+#blog .blog-post a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+#blog .blog-post a:hover,
+#blog .blog-post a:focus {
+    color: var(--hover-color);
+    outline: none;
+}
+
+/* Contact */
+#contact ul {
+    list-style: none;
+    padding: 0;
+}
+
+#contact ul li {
+    margin-bottom: 20px;
+    font-size: 16px;
+    color: #bdc3c7;
+    display: flex;
+    align-items: center;
+}
+
+#contact ul li i {
+    margin-right: 8px;
+    color: var(--primary-color);
+    /* Ajusta el color según tu diseño */
+}
+
+#contact ul li a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+#contact ul li a:hover,
+#contact ul li a:focus {
+    color: var(--hover-color);
+    outline: none;
+}
+
+/* Contact Form */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.contact-form label {
+    font-size: 16px;
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+}
+
+.contact-form label i {
+    margin-right: 8px;
+    color: var(--primary-color);
+    /* Ajusta el color según tu diseño */
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.5s ease, color 0.5s ease;
+    background-color: #34495e;
+    color: var(--text-color);
+}
+
+body.dark-mode .contact-form input,
+body.dark-mode .contact-form textarea {
+    background-color: #bdc3c7;
+    color: var(--dark-text);
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+.contact-form button {
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--primary-color);
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-form button i {
+    margin-right: 8px;
+}
+
+.contact-form button:hover,
+.contact-form button:focus {
+    background-color: var(--secondary-color);
+    outline: none;
+}
+
+/* Footer */
+footer {
+    background-color: rgba(26, 188, 156, 0.9);
+    /* Semi-transparente usando rgba */
+    color: #fff;
+    width: 90%;
+    /* Reducido para permitir margen */
+    margin: 20px auto;
+    /* Separación en todos los lados y centrado */
+    padding: 15px 20px;
+    border-radius: 15px;
+    /* Bordes redondeados */
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    /* Sombra suave para destacarse del fondo */
+    transition: background-color 0.5s ease, transform 0.3s ease;
+}
+
+footer:hover {
+    transform: translateY(-5px);
+    /* Elevación al pasar el cursor */
+    background-color: rgba(26, 188, 156, 1);
+    /* Opacidad completa al hover */
+}
+
+footer p {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.5;
+    flex: 1;
+    text-align: left;
+}
+
+.social-icons {
+    display: flex;
+    gap: 10px;
+    flex: 1;
+    justify-content: flex-end;
+}
+
+.social-icons a {
+    color: #fff;
+    font-size: 20px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icons a:hover,
+.social-icons a:focus {
+    color: var(--hover-color);
+    transform: scale(1.2);
+    outline: none;
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Asegurar que los iconos tengan el color adecuado */
+i {
+    color: inherit;
+}
+
+/* Iconos en la sección Contacto */
+#contact ul li i {
+    margin-right: 8px;
+    color: var(--primary-color);
+    /* Ajusta el color según tu diseño */
+}
+
+/* Iconos en el formulario de Contacto */
+.contact-form label i {
+    margin-right: 8px;
+    color: var(--primary-color);
+    /* Ajusta el color según tu diseño */
+}
+
+/* Icono en el botón de enviar */
+.contact-form button i {
+    margin-right: 8px;
+}
+
+/* Enhanced Sidebar Styling */
+.sidebar {
+    position: fixed;
+    top: 50%;
+    left: 90px;
+    /* Ajustado más a la derecha */
+    transform: translateY(-50%);
+    width: 280px;
+    background-color: #2c3e50;
+    /* Fondo oscuro y elegante */
+    color: #ecf0f1;
+    border-radius: 15px;
+    /* Bordes ligeramente redondeados */
+    padding: 20px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+    /* Sombra sutil */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    transition: all 0.3s ease;
+}
+
+.sidebar:hover {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+.sidebar-profile img {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #ecf0f1;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.sidebar-profile img:hover {
+    transform: scale(1.05);
+    border-color: #27ae60;
+    /* Verde más oscuro al pasar el ratón */
+}
+
+.sidebar-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.sidebar-nav ul li {
+    margin: 8px 0;
+}
+
+.sidebar-nav ul li a {
+    color: #16a085;
+    text-decoration: none;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+
+.sidebar-nav ul li a i {
+    margin-right: 10px;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.sidebar-nav ul li a:hover,
+.sidebar-nav ul li a:focus {
+    background-color: #34495e;
+    color: #27ae60;
+    /* Verde más oscuro al hover */
+    transform: translateX(5px);
+}
+
+.sidebar-nav ul li a:hover i,
+.sidebar-nav ul li a:focus i {
+    color: #27ae60;
+}
+
+/* Social Icons */
+.social-icons a {
+    color: #ecf0f1;
+    font-size: 20px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icons a:hover,
+.social-icons a:focus {
+    color: #27ae60;
+    transform: scale(1.1);
+}
+
+/* Additional Info */
+.additional-info p {
+    font-size: 17px;
+    color: #27ae60;
+    margin-bottom: 8px;
+}
+
+.additional-info ul li {
+    font-size: 15px;
+    color: #ecf0f1;
+}
+
+.additional-info ul li i {
+    color: #27ae60;
+    margin-right: 5px;
+}
+
+/* Active Link Indicator */
+.sidebar-nav ul li a.active {
+    background-color: #27ae60;
+    color: #2c3e50;
+}
+
+.sidebar-nav ul li a.active i {
+    color: #2c3e50;
+}
+
+/* Estilos para el Overlay */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 1002;
+    /* Debajo del botón toggle y por encima de otros contenidos */
+}
+
+/* Estado Activo del Overlay */
+.overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Estado Activo de la Sidebar */
+.sidebar.active {
+    transform: translateX(0);
+    transition: transform 0.3s ease;
+}
+
+/* Ocultar el botón toggle por defecto */
+.menu-toggle {
+    display: none;
+}
+
+@keyframes wave {
+    0% {
+        transform: translateX(0) translateY(0);
+    }
+
+    25% {
+        transform: translateX(10px) translateY(-5px);
+    }
+
+    50% {
+        transform: translateX(0) translateY(0);
+    }
+
+    75% {
+        transform: translateX(-10px) translateY(5px);
+    }
+
+    100% {
+        transform: translateX(0) translateY(0);
+    }
+}
+
+/* Responsividad */
+@media (max-width: 820px) {
+
+    /* Ocultar la Sidebar por Defecto */
+    .sidebar {
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 250px;
+        background-color: var(--background-color);
+        z-index: 1003;
+        overflow-y: auto;
+        border-radius: 0;
+    }
+
+    /* Estilos para el Botón de Menú Toggle */
+    .menu-toggle {
+        position: fixed;
+        top: -20px;
+        left: -20px;
+        width: 70px;
+        height: 70px;
+        background-color: var(--primary-color);
+        border: none;
+        border-radius: 100%;
+        color: #fff;
+        font-size: 24px;
+        cursor: pointer;
+        display: flex;
+        /* Asegura que el botón sea visible en pantallas pequeñas */
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        z-index: 1000;
+        /* Por encima de la sidebar y el overlay */
+        transition: background-color 0.3s ease, transform 0.3s ease;
+        animation: wave 3s ease-in-out infinite;
+        /* Añade la animación de ondas */
+    }
+
+    .menu-toggle:hover,
+    .menu-toggle:focus {
+        background-color: var(--hover-color);
+        transform: scale(1.1);
+        outline: none;
+    }
+
+
+    /* Overlay que Solo Oscurece el Contenido Principal */
+    .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.3);
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+        z-index: 1002;
+        /* Menor que la sidebar */
+        pointer-events: none;
+        /* Permite interacción con la sidebar cuando el overlay no está activo */
+    }
+
+    /* Estado Activo de la Sidebar */
+    .sidebar.active {
+        transform: translateX(0);
+        /* Despliega la sidebar */
+    }
+
+    /* Estado Activo del Overlay */
+    .overlay.active {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        /* Permite cerrar el menú al hacer clic en el overlay */
+    }
+
+    footer {
+        flex-direction: column;
+        text-align: center;
+        margin: 15px auto;
+        padding: 20px 10px;
+        border-radius: 10px;
+    }
+
+    footer p {
+        font-size: 14px;
+        text-align: center;
+    }
+
+    /* Centrar el contenido principal */
+    main {
+        margin-left: 0;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Opcional: Ajustar la anchura máxima para pantallas pequeñas */
+    main {
+        max-width: 100%;
+    }
+
+    .skills-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .skill-category {
+        width: 100%;
+    }
+
+    .project {
+        width: 100%;
+    }
+}
+
+/* Media Query para Pantallas de 1559px y Superior */
+@media (min-width: 820px) and (max-width: 1559px) {
+
+    /* Enhanced Sidebar Styling */
+    .sidebar {
+        position: fixed;
+        top: 50%;
+        left: 90px;
+        /* Ajustado más a la derecha */
+        transform: translateY(-50%);
+        width: 280px;
+        background-color: #2c3e50;
+        /* Fondo oscuro y elegante */
+        color: #ecf0f1;
+        border-radius: 15px;
+        /* Bordes ligeramente redondeados */
+        padding: 20px;
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+        /* Sombra sutil */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        transition: all 0.3s ease;
+    }
+
+    .sidebar:hover {
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    }
+
+    .sidebar-profile img {
+        width: 90px;
+        height: 90px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 3px solid #ecf0f1;
+        margin-bottom: 10px;
+        transition: transform 0.3s ease, border-color 0.3s ease;
+    }
+
+    .sidebar-profile img:hover {
+        transform: scale(1.05);
+        border-color: #27ae60;
+        /* Verde más oscuro al pasar el ratón */
+    }
+
+    .sidebar-nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+    }
+
+    .sidebar-nav ul li {
+        margin: 8px 0;
+    }
+
+    .sidebar-nav ul li a {
+        color: #16a085;
+        text-decoration: none;
+        font-size: 16px;
+        display: flex;
+        align-items: center;
+        padding: 10px 15px;
+        border-radius: 8px;
+        transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+    }
+
+    .sidebar-nav ul li a i {
+        margin-right: 10px;
+        font-size: 18px;
+        transition: color 0.3s ease;
+    }
+
+    .sidebar-nav ul li a:hover,
+    .sidebar-nav ul li a:focus {
+        background-color: #34495e;
+        color: #27ae60;
+        /* Verde más oscuro al hover */
+        transform: translateX(5px);
+    }
+
+    .sidebar-nav ul li a:hover i,
+    .sidebar-nav ul li a:focus i {
+        color: #27ae60;
+    }
+
+    /* Ocultar el botón toggle en pantallas grandes */
+    .menu-toggle {
+        display: none;
+    }
+
+    /* Asegurar que el overlay no interfiera en pantallas grandes */
+    .overlay {
+        display: none;
+    }
+
+    /* Enhanced Sidebar Styling */
+    .sidebar {
+        position: fixed;
+        top: 50%;
+        left: 50px;
+        /* Ajustado más a la derecha */
+        transform: translateY(-50%);
+        width: 230px;
+        background-color: #2c3e50;
+        /* Fondo oscuro y elegante */
+        color: #ecf0f1;
+        border-radius: 15px;
+        /* Bordes ligeramente redondeados */
+        padding: 20px;
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+        /* Sombra sutil */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        transition: all 0.3s ease;
+    }
+
+    .sidebar:hover {
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    }
+
+    .sidebar-profile img {
+        width: 90px;
+        height: 90px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 3px solid #ecf0f1;
+        margin-bottom: 10px;
+        transition: transform 0.3s ease, border-color 0.3s ease;
+    }
+
+    .sidebar-profile img:hover {
+        transform: scale(1.05);
+        border-color: #27ae60;
+        /* Verde más oscuro al pasar el ratón */
+    }
+
+    .sidebar-nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+    }
+
+    .sidebar-nav ul li {
+        margin: 8px 0;
+    }
+
+    .sidebar-nav ul li a {
+        color: #16a085;
+        text-decoration: none;
+        font-size: 16px;
+        display: flex;
+        align-items: center;
+        padding: 10px 15px;
+        border-radius: 8px;
+        transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+    }
+
+    .sidebar-nav ul li a i {
+        margin-right: 10px;
+        font-size: 18px;
+        transition: color 0.3s ease;
+    }
+
+    .sidebar-nav ul li a:hover,
+    .sidebar-nav ul li a:focus {
+        background-color: #34495e;
+        color: #27ae60;
+        /* Verde más oscuro al hover */
+        transform: translateX(5px);
+    }
+
+    .sidebar-nav ul li a:hover i,
+    .sidebar-nav ul li a:focus i {
+        color: #27ae60;
+    }
+
+    /* Ajustar los estilos de las secciones para ocupar el espacio correctamente */
+    section {
+        width: 100%;
+    }
+
+    /* Ajustar las habilidades y proyectos para pantallas grandes */
+    .skills-container {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .skill-category {
+        width: 30%;
+        /* Ajustar según necesidades */
+    }
+
+    .project {
+        width: 30%;
+        /* Ajustar según necesidades */
+    }
+}
