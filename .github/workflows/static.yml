@@ -26,7 +26,7 @@ jobs:
   deploy:
     environment:
       name: github-pages
-      url: bluexerry.github.io
+      url: https://bluexerry.github.io
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
