@@ -1,2 +1,0 @@
-# PCSS-JesusManuelVazquezHerrera
-Ejercicio CV 

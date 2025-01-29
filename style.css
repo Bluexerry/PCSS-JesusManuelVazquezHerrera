@@ -114,24 +114,6 @@ nav {
     color: var(--hover-color);
 }
 
-/* Social Icons */
-.social-icons {
-    display: flex;
-    gap: 15px;
-}
-
-.social-icons a {
-    color: var(--text-color);
-    font-size: 18px;
-    transition: color 0.3s ease;
-}
-
-.social-icons a:hover,
-.social-icons a:focus {
-    color: var(--primary-color);
-    outline: none;
-}
-
 /* Transiciones suaves para nav-links */
 .nav-links a.active::after {
     width: 100%;
@@ -273,61 +255,6 @@ section h2 {
     color: #bdc3c7;
 }
 
-/* Testimonios */
-#testimonials {
-    background-color: var(--background-color);
-}
-
-#testimonials .testimonial {
-    background-color: #34495e;
-    padding: 20px;
-    border-radius: 8px;
-    margin-bottom: 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-#testimonials .testimonial:hover,
-#testimonials .testimonial:focus-within {
-    background-color: var(--primary-color);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
-}
-
-#testimonials .testimonial p {
-    font-size: 16px;
-    color: var(--text-color);
-    margin-bottom: 10px;
-}
-
-#testimonials .testimonial h4 {
-    text-align: right;
-    font-size: 16px;
-    color: var(--hover-color);
-}
-
-/* Proyectos */
-.portfolio-filters {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.portfolio-filters button {
-    margin: 0 10px;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    background-color: var(--primary-color);
-    color: #fff;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.portfolio-filters button:hover,
-.portfolio-filters button:focus {
-    background-color: var(--secondary-color);
-    outline: none;
-}
-
 .projects-container {
     display: flex;
     flex-wrap: wrap;
@@ -336,6 +263,10 @@ section h2 {
 }
 
 .project {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    justify-content: space-between;
     background-color: var(--background-color);
     padding: 20px;
     border-radius: 8px;
@@ -344,6 +275,25 @@ section h2 {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+}
+
+.github-button {
+    padding: 10px 15px;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-block;
+    align-self: flex-end;
+    margin-top: 20px;
+    box-shadow: 0 4px 6px rgba(0.5, 0.5, 0.5, 0.5);
+    text-align: center;
+}
+
+.github-button:hover,
+.github-button:focus {
+    background-color: var(--secondary-color); /* Darker vibrant red */
 }
 
 .project:hover,
@@ -392,49 +342,6 @@ section h2 {
 
 .project a:hover,
 .project a:focus {
-    color: var(--hover-color);
-    outline: none;
-}
-
-/* Blog */
-#blog {
-    background-color: var(--background-color);
-}
-
-#blog .blog-post {
-    background-color: #2c3e50;
-    padding: 20px;
-    border-radius: 8px;
-    margin-bottom: 20px;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-#blog .blog-post:hover,
-#blog .blog-post:focus-within {
-    background-color: var(--primary-color);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
-}
-
-#blog .blog-post h3 {
-    color: var(--text-color);
-    display: flex;
-    align-items: center;
-}
-
-#blog .blog-post h3 i {
-    margin-right: 8px;
-}
-
-#blog .blog-post a {
-    color: #fff;
-    text-decoration: none;
-    transition: color 0.3s ease;
-    display: flex;
-    align-items: center;
-}
-
-#blog .blog-post a:hover,
-#blog .blog-post a:focus {
     color: var(--hover-color);
     outline: none;
 }
@@ -503,12 +410,6 @@ section h2 {
     color: var(--text-color);
 }
 
-body.dark-mode .contact-form input,
-body.dark-mode .contact-form textarea {
-    background-color: #bdc3c7;
-    color: var(--dark-text);
-}
-
 .contact-form textarea {
     resize: vertical;
 }
@@ -555,14 +456,6 @@ footer {
     align-items: center;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     /* Sombra suave para destacarse del fondo */
-    transition: background-color 0.5s ease, transform 0.3s ease;
-}
-
-footer:hover {
-    transform: translateY(-5px);
-    /* Elevación al pasar el cursor */
-    background-color: rgba(26, 188, 156, 1);
-    /* Opacidad completa al hover */
 }
 
 footer p {
@@ -573,34 +466,9 @@ footer p {
     text-align: left;
 }
 
-.social-icons {
-    display: flex;
-    gap: 10px;
-    flex: 1;
-    justify-content: flex-end;
-}
-
-.social-icons a {
-    color: #fff;
-    font-size: 20px;
-    transition: color 0.3s ease, transform 0.3s ease;
-}
-
-.social-icons a:hover,
-.social-icons a:focus {
-    color: var(--hover-color);
-    transform: scale(1.2);
-    outline: none;
-}
-
 /* Smooth Scrolling */
 html {
     scroll-behavior: smooth;
-}
-
-/* Asegurar que los iconos tengan el color adecuado */
-i {
-    color: inherit;
 }
 
 /* Iconos en la sección Contacto */
@@ -608,18 +476,6 @@ i {
     margin-right: 8px;
     color: var(--primary-color);
     /* Ajusta el color según tu diseño */
-}
-
-/* Iconos en el formulario de Contacto */
-.contact-form label i {
-    margin-right: 8px;
-    color: var(--primary-color);
-    /* Ajusta el color según tu diseño */
-}
-
-/* Icono en el botón de enviar */
-.contact-form button i {
-    margin-right: 8px;
 }
 
 /* Enhanced Sidebar Styling */
@@ -647,22 +503,6 @@ i {
 
 .sidebar:hover {
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
-}
-
-.sidebar-profile img {
-    width: 90px;
-    height: 90px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid #ecf0f1;
-    margin-bottom: 10px;
-    transition: transform 0.3s ease, border-color 0.3s ease;
-}
-
-.sidebar-profile img:hover {
-    transform: scale(1.05);
-    border-color: #27ae60;
-    /* Verde más oscuro al pasar el ratón */
 }
 
 .sidebar-nav ul {
@@ -704,36 +544,6 @@ i {
 .sidebar-nav ul li a:hover i,
 .sidebar-nav ul li a:focus i {
     color: #27ae60;
-}
-
-/* Social Icons */
-.social-icons a {
-    color: #ecf0f1;
-    font-size: 20px;
-    transition: color 0.3s ease, transform 0.3s ease;
-}
-
-.social-icons a:hover,
-.social-icons a:focus {
-    color: #27ae60;
-    transform: scale(1.1);
-}
-
-/* Additional Info */
-.additional-info p {
-    font-size: 17px;
-    color: #27ae60;
-    margin-bottom: 8px;
-}
-
-.additional-info ul li {
-    font-size: 15px;
-    color: #ecf0f1;
-}
-
-.additional-info ul li i {
-    color: #27ae60;
-    margin-right: 5px;
 }
 
 /* Active Link Indicator */
@@ -926,89 +736,6 @@ i {
 /* Media Query para Pantallas de 1559px y Superior */
 @media (min-width: 820px) and (max-width: 1559px) {
 
-    /* Enhanced Sidebar Styling */
-    .sidebar {
-        position: fixed;
-        top: 50%;
-        left: 90px;
-        /* Ajustado más a la derecha */
-        transform: translateY(-50%);
-        width: 280px;
-        background-color: #2c3e50;
-        /* Fondo oscuro y elegante */
-        color: #ecf0f1;
-        border-radius: 15px;
-        /* Bordes ligeramente redondeados */
-        padding: 20px;
-        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
-        /* Sombra sutil */
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 15px;
-        transition: all 0.3s ease;
-    }
-
-    .sidebar:hover {
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
-    }
-
-    .sidebar-profile img {
-        width: 90px;
-        height: 90px;
-        border-radius: 50%;
-        object-fit: cover;
-        border: 3px solid #ecf0f1;
-        margin-bottom: 10px;
-        transition: transform 0.3s ease, border-color 0.3s ease;
-    }
-
-    .sidebar-profile img:hover {
-        transform: scale(1.05);
-        border-color: #27ae60;
-        /* Verde más oscuro al pasar el ratón */
-    }
-
-    .sidebar-nav ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        width: 100%;
-    }
-
-    .sidebar-nav ul li {
-        margin: 8px 0;
-    }
-
-    .sidebar-nav ul li a {
-        color: #16a085;
-        text-decoration: none;
-        font-size: 16px;
-        display: flex;
-        align-items: center;
-        padding: 10px 15px;
-        border-radius: 8px;
-        transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
-    }
-
-    .sidebar-nav ul li a i {
-        margin-right: 10px;
-        font-size: 18px;
-        transition: color 0.3s ease;
-    }
-
-    .sidebar-nav ul li a:hover,
-    .sidebar-nav ul li a:focus {
-        background-color: #34495e;
-        color: #27ae60;
-        /* Verde más oscuro al hover */
-        transform: translateX(5px);
-    }
-
-    .sidebar-nav ul li a:hover i,
-    .sidebar-nav ul li a:focus i {
-        color: #27ae60;
-    }
 
     /* Ocultar el botón toggle en pantallas grandes */
     .menu-toggle {
@@ -1024,7 +751,7 @@ i {
     .sidebar {
         position: fixed;
         top: 50%;
-        left: 50px;
+        left: 70px;
         /* Ajustado más a la derecha */
         transform: translateY(-50%);
         width: 230px;
@@ -1045,22 +772,6 @@ i {
 
     .sidebar:hover {
         box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
-    }
-
-    .sidebar-profile img {
-        width: 90px;
-        height: 90px;
-        border-radius: 50%;
-        object-fit: cover;
-        border: 3px solid #ecf0f1;
-        margin-bottom: 10px;
-        transition: transform 0.3s ease, border-color 0.3s ease;
-    }
-
-    .sidebar-profile img:hover {
-        transform: scale(1.05);
-        border-color: #27ae60;
-        /* Verde más oscuro al pasar el ratón */
     }
 
     .sidebar-nav ul {
@@ -1120,8 +831,8 @@ i {
         /* Ajustar según necesidades */
     }
 
-    .project {
-        width: 30%;
-        /* Ajustar según necesidades */
+    /* Opcional: Ajustar la anchura máxima para pantallas pequeñas */
+    main {
+        max-width: 70%;
     }
 }

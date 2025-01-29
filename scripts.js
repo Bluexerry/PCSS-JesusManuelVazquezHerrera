@@ -38,33 +38,6 @@ window.addEventListener('scroll', handleScroll);
 // Ejecutar al cargar
 document.addEventListener('DOMContentLoaded', handleScroll);
 
-// Theme Toggle
-const toggleButton = document.getElementById('toggle-button');
-
-if (toggleButton) {
-    toggleButton.addEventListener('click', () => {
-        document.body.classList.toggle('dark-mode');
-        // Cambiar icono
-        toggleButton.innerHTML = document.body.classList.contains('dark-mode') 
-            ? '<i class="fas fa-sun"></i>' 
-            : '<i class="fas fa-moon"></i>';
-    });
-}
-
-// Portfolio Filters
-document.querySelectorAll('.portfolio-filters button').forEach(button => {
-    button.addEventListener('click', () => {
-        const filter = button.getAttribute('data-filter');
-        document.querySelectorAll('.project').forEach(project => {
-            if (filter === 'all' || project.classList.contains(filter)) {
-                project.style.display = 'block';
-            } else {
-                project.style.display = 'none';
-            }
-        });
-    });
-});
-
 // Contact Form Validation
 const contactForm = document.querySelector('.contact-form');
 
@@ -94,17 +67,6 @@ if (contactForm) {
 function validateEmail(email) {
     const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return re.test(String(email).toLowerCase());
-}
-
-// Service Worker Registration
-if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/service-worker.js').then(registration => {
-            console.log('ServiceWorker registrado con alcance:', registration.scope);
-        }, err => {
-            console.log('Fallo el registro del ServiceWorker:', err);
-        });
-    });
 }
 
 // *** Menú Toggle (Remplaza al Hamburger Menu Toggle anterior) ***
@@ -149,5 +111,3 @@ if (menuToggle && overlay && sidebar && navLinksElements.length > 0) {
     });
 }
 // *** Fin del Menú Toggle ***
-
-// Nota: Se ha eliminado el código relacionado con '.hamburger' y '.nav-links' para evitar conflictos.
