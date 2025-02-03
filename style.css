@@ -293,7 +293,8 @@ section h2 {
 
 .github-button:hover,
 .github-button:focus {
-    background-color: var(--secondary-color); /* Darker vibrant red */
+    background-color: var(--secondary-color);
+    /* Darker vibrant red */
 }
 
 .project:hover,
@@ -440,30 +441,44 @@ section h2 {
 
 /* Footer */
 footer {
-    background-color: rgba(26, 188, 156, 0.9);
-    /* Semi-transparente usando rgba */
+    background-color: rgba(26, 188, 156, 1);
     color: #fff;
     width: 90%;
-    /* Reducido para permitir margen */
     margin: 20px auto;
-    /* Separación en todos los lados y centrado */
-    padding: 15px 20px;
+    padding: 5px 20px;
     border-radius: 15px;
-    /* Bordes redondeados */
     position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    /* Sombra suave para destacarse del fondo */
 }
 
-footer p {
+.footer-info {
+    flex: 1;
+}
+
+.footer-info p {
     margin: 0;
     font-size: 16px;
     line-height: 1.5;
-    flex: 1;
     text-align: left;
+}
+
+.footer-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.footer-icons a {
+    color: #fff;
+    font-size: 1.5rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer-icons a:hover {
+    color: var(--primary-color, #00aaff);
+    transform: scale(1.1);
 }
 
 /* Smooth Scrolling */
@@ -481,11 +496,11 @@ html {
 /* Enhanced Sidebar Styling */
 .sidebar {
     position: fixed;
-    top: 50%;
-    left: 90px;
+    top: 49%;
+    left: 70px;
     /* Ajustado más a la derecha */
     transform: translateY(-50%);
-    width: 280px;
+    width: 350px;
     background-color: #2c3e50;
     /* Fondo oscuro y elegante */
     color: #ecf0f1;
@@ -501,8 +516,43 @@ html {
     transition: all 0.3s ease;
 }
 
+.sidebar .profile-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    border: 4px solid #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sidebar .profile-img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
 .sidebar:hover {
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+.sidebar-info {
+    text-align: center;
+    color: #fff;
+    white-space: nowrap;
+}
+
+.sidebar-info h2 {
+    font-size: 1.2rem;
+    margin: 10px 0;
+    font-weight: bold;
+}
+
+.sidebar-info p {
+    font-size: 1rem;
+    margin: 5px 0;
+    line-height: 1.4;
+    color: #ddd;
 }
 
 .sidebar-nav ul {
@@ -510,10 +560,6 @@ html {
     padding: 0;
     margin: 0;
     width: 100%;
-}
-
-.sidebar-nav ul li {
-    margin: 8px 0;
 }
 
 .sidebar-nav ul li a {
@@ -541,18 +587,9 @@ html {
     transform: translateX(5px);
 }
 
-.sidebar-nav ul li a:hover i,
-.sidebar-nav ul li a:focus i {
-    color: #27ae60;
-}
-
 /* Active Link Indicator */
 .sidebar-nav ul li a.active {
     background-color: #27ae60;
-    color: #2c3e50;
-}
-
-.sidebar-nav ul li a.active i {
     color: #2c3e50;
 }
 
@@ -588,6 +625,27 @@ html {
     display: none;
 }
 
+/* Estilos para los íconos de Font Awesome */
+.fas,
+.fab {
+    margin-right: 8px;
+    vertical-align: middle;
+    color: aquamarine;
+    transition: color 0.3s ease, transform 0.3s ease;
+    padding: 5px;
+}
+
+.fas:hover,
+.fab:hover {
+    color: var(--hover-color);
+    transform: scale(1.1);
+}
+
+/* Estilo específico para iconos dentro de secciones */
+section i {
+    margin-right: 8px;
+}
+
 @keyframes wave {
     0% {
         transform: translateX(0) translateY(0);
@@ -611,7 +669,7 @@ html {
 }
 
 /* Responsividad */
-@media (max-width: 819px) {
+@media (max-width: 820px) {
 
     /* Ocultar la Sidebar por Defecto */
     .sidebar {
@@ -626,6 +684,25 @@ html {
         z-index: 1003;
         overflow-y: auto;
         border-radius: 0;
+    }
+
+    .sidebar-info h2 {
+        font-size: 1rem;
+        /* Reduce el tamaño de fuente */
+        white-space: nowrap;
+        /* Evita que el texto se rompa en varias líneas */
+    }
+
+    .sidebar-info p {
+        font-size: 0.80rem;
+        /* Reduce el tamaño de fuente */
+        white-space: nowrap;
+        /* Evita que el texto se rompa en varias líneas */
+    }
+
+    .sidebar-nav li a {
+        margin-top: 15px;
+        margin-bottom: 15px;
     }
 
     /* Estilos para el Botón de Menú Toggle */
@@ -733,106 +810,60 @@ html {
     }
 }
 
-/* Media Query para Pantallas de 1559px y Superior */
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+ul li {
+    list-style-type: none;
+}
+
+/* Extiende el rango de pantallas medianas para incluir resoluciones de portátiles */
 @media (min-width: 820px) and (max-width: 1559px) {
-
-
-    /* Ocultar el botón toggle en pantallas grandes */
-    .menu-toggle {
-        display: none;
-    }
-
-    /* Asegurar que el overlay no interfiera en pantallas grandes */
-    .overlay {
-        display: none;
-    }
-
-    /* Enhanced Sidebar Styling */
     .sidebar {
-        position: fixed;
-        top: 50%;
-        left: 70px;
-        /* Ajustado más a la derecha */
-        transform: translateY(-50%);
-        width: 230px;
-        background-color: #2c3e50;
-        /* Fondo oscuro y elegante */
-        color: #ecf0f1;
-        border-radius: 15px;
-        /* Bordes ligeramente redondeados */
-        padding: 20px;
-        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
-        /* Sombra sutil */
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+        top: 3%;
+        left: 23.5%;
+        height: 82%;
+        width: 320px;
+        /* Aumentado de 250px a 300px */
+        background-color: var(--background-color);
+        z-index: 1003;
+        border-radius: 10px;
+    }
+
+    .sidebar-info h2 {
+        font-size: 1rem;
+        /* Reduce el tamaño de fuente */
+        white-space: nowrap;
+        /* Evita que el texto se rompa en varias líneas */
+        overflow: hidden;
+        /* Oculta el contenido que sobrepase el ancho */
+    }
+
+    .sidebar-nav li a {
+        font-size: 1rem !important;
+        /* Reduce el tamaño de fuente de los links */
+        padding: 6px 10px !important;
+        /* Ajusta el padding para un espacio más compacto */
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+
+    /* Main content container */
+    main {
+        max-width: 1100px;
+        /* Se reduce un poco el ancho máximo */
+        width: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 15px;
-        transition: all 0.3s ease;
-    }
-
-    .sidebar:hover {
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
-    }
-
-    .sidebar-nav ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        width: 100%;
-    }
-
-    .sidebar-nav ul li {
-        margin: 8px 0;
-    }
-
-    .sidebar-nav ul li a {
-        color: #16a085;
-        text-decoration: none;
-        font-size: 16px;
-        display: flex;
-        align-items: center;
-        padding: 10px 15px;
-        border-radius: 8px;
-        transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
-    }
-
-    .sidebar-nav ul li a i {
-        margin-right: 10px;
-        font-size: 18px;
-        transition: color 0.3s ease;
-    }
-
-    .sidebar-nav ul li a:hover,
-    .sidebar-nav ul li a:focus {
-        background-color: #34495e;
-        color: #27ae60;
-        /* Verde más oscuro al hover */
-        transform: translateX(5px);
-    }
-
-    .sidebar-nav ul li a:hover i,
-    .sidebar-nav ul li a:focus i {
-        color: #27ae60;
-    }
-
-    /* Ajustar los estilos de las secciones para ocupar el espacio correctamente */
-    section {
-        width: 100%;
-    }
-
-    /* Ajustar las habilidades y proyectos para pantallas grandes */
-    .skills-container {
-        flex-direction: row;
-        flex-wrap: wrap;
-    }
-
-    .skill-category {
-        width: 30%;
-        /* Ajustar según necesidades */
-    }
-
-    /* Opcional: Ajustar la anchura máxima para pantallas pequeñas */
-    main {
-        max-width: 70%;
+        transition: padding 0.5s ease;
+        margin-left: 300px;
+        /* Se acerca el main más a la derecha */
+        padding: 40px;
     }
 }
