@@ -1,44 +1,60 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="es">
 
+<!-- ======================================================
+     SECCIÓN HEAD
+     ====================================================== -->
+
 <head>
+    <!-- Define la codificación de caracteres -->
     <meta charset="UTF-8">
+    <!-- Configura el viewport para hacer el sitio responsivo -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Título de la página -->
     <title>Curriculum Vitae - Jesús Manuel Vázquez Herrera</title>
+    <!-- Meta descripción para SEO -->
     <meta name="description"
         content="Currículum Vitae de Jesús Manuel Vázquez Herrera, desarrollador de aplicaciones web con experiencia en ingeniería eléctrica y automatización.">
+    <!-- Meta keywords para SEO -->
     <meta name="keywords"
         content="Jesús Manuel, CV, Desarrollador Web, Ingeniería Eléctrica, Automatización, Proyectos, Habilidades">
+    <!-- Información del autor -->
     <meta name="author" content="Jesús Manuel Vázquez Herrera">
 
-    <!-- Google Fonts -->
+    <!-- ======================================================
+         INCLUSIÓN DE RECURSOS EXTERNOS
+         ====================================================== -->
+    <!-- Google Fonts para la tipografía -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-
-    <!-- Favicon -->
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-
-    <!-- Font Awesome CDN -->
+    <!-- Favicon para la pestaña del navegador -->
+    <link rel="icon" href="Recursos/Favicon.png" type="image/x-icon">
+    <!-- Font Awesome para iconos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-
+    <!-- Hoja de estilos principal -->
     <link rel="stylesheet" href="style.css">
-
-    <!-- Particles.js -->
+    <!-- Carga la librería Particles.js para el fondo animado -->
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 </head>
 
 <body>
-    <!-- Particles Background -->
+    <!-- ======================================================
+         FONDO CON PARTICLES.JS
+         ====================================================== -->
+    <!-- Contenedor para la animación de partículas en el fondo -->
     <div id="particles-js"></div>
 
-    <!-- Sidebar -->
+    <!-- ======================================================
+         SIDEBAR (BARRA LATERAL)
+         ====================================================== -->
     <div class="sidebar">
+        <!-- Imagen de perfil -->
         <img src="Recursos/Jesus.png" alt="Foto de Jesús Manuel" class="profile-img" />
-        <!-- Nueva sección de información profesional -->
+        <!-- Información profesional en la sidebar -->
         <div class="sidebar-info">
             <h2><i class="fas fa-user"></i> Jesús Mª Vázquez Herrera</h2>
             <p><i class="fas fa-code"></i> Desarrollador de Aplicaciones Web</p>
         </div>
+        <!-- Menú de navegación lateral -->
         <nav class="sidebar-nav">
             <ul>
                 <li><a href="#about"><i class="fas fa-user"></i> Sobre mí</a></li>
@@ -51,38 +67,62 @@
         </nav>
     </div>
 
-    <!-- Botón de menú toggle -->
+    <!-- ======================================================
+         BOTÓN MENU TOGGLE
+         ====================================================== -->
+    <!-- Botón para mostrar u ocultar el menú lateral (útil en dispositivos móviles) -->
     <button id="menu-toggle" class="menu-toggle" aria-label="Abrir menú" aria-controls="sidebar" aria-expanded="false">
         <i class="fas fa-bars"></i>
     </button>
 
-    <!-- Overlay -->
+    <!-- ======================================================
+         OVERLAY
+         ====================================================== -->
+    <!-- Capa semitransparente que se muestra al abrir el menú lateral para bloquear el fondo
+         y permitir cerrar el menú al hacer clic -->
     <div id="overlay" class="overlay"></div>
 
+    <!-- ======================================================
+         CONTENIDO PRINCIPAL (MAIN)
+         ====================================================== -->
     <main role="main">
         <!-- About Section -->
         <section id="about" class="fade-in">
+            <!-- Título de la sección con un icono descriptivo -->
             <h2><i class="fas fa-info-circle"></i> Sobre mí</h2>
-            <p>Mi nombre es <strong>Jesús Manuel Vázquez Herrera</strong>, actualmente estudiante de <strong>Desarrollo
+            <!-- Párrafo introductorio que describe tu perfil profesional y personal -->
+            <p>
+                Mi nombre es <strong>Jesús Manuel Vázquez Herrera</strong>, actualmente estudiante de <strong>Desarrollo
                     de Aplicaciones Web</strong> en ADA ITS, Sevilla. Poseo una sólida formación técnica en
                 automatización del hogar y sistemas eléctricos, complementada con gestión de almacenes y desarrollo de
                 software. Mi pasión por la tecnología y la innovación me impulsa a crear soluciones eficientes y
-                escalables, siempre orientadas a la mejora continua y la satisfacción del usuario.</p>
+                escalables, siempre orientadas a la mejora continua y la satisfacción del usuario.
+            </p>
+            <!-- Lista con información personal relevante -->
             <ul>
                 <li><i class="fas fa-birthday-cake"></i> <strong>Fecha de nacimiento:</strong> 27/1/1999</li>
                 <li><i class="fas fa-id-card"></i> <strong>Carnet de conducir:</strong> B</li>
                 <li><i class="fas fa-map-marker-alt"></i> <strong>Permiso para trabajar en:</strong> España</li>
                 <li><i class="fas fa-plane"></i> <strong>Disponibilidad para viajar:</strong> Sí</li>
-                <li><i class="fas fa-industry"></i> <strong>Sector:</strong> Instalaciones eléctricas, Instalaciones de
-                    telecomunicaciones, Gestión de almacén, Desarrollo de software</li>
-                <li><i class="fas fa-star"></i> <strong>Total de años de experiencia:</strong> +5</li>
+                <li>
+                    <i class="fas fa-industry"></i>
+                    <strong>Sector:</strong>
+                    Instalaciones eléctricas, Instalaciones de telecomunicaciones, Gestión de almacén, Desarrollo de
+                    software
+                </li>
+                <li><i class="fas fa-star"></i> <strong>Total de años de experiencia:</strong> +2</li>
             </ul>
         </section>
 
-        <!-- Skills Section -->
+        <!-- ======================================================
+         SKILLS SECTION (HABILIDADES) 
+         ====================================================== -->
         <section id="skills" class="fade-in">
+            <!-- Título de la sección que registra tus habilidades -->
             <h2><i class="fas fa-cogs"></i> Habilidades</h2>
+            <!-- Contenedor que agrupa las diferentes categorías de habilidades -->
             <div class="skills-container">
+                <!-- Cada bloque 'skill-category' muestra una categoría específica de habilidades -->
                 <div class="skill-category">
                     <h3><i class="fas fa-code"></i> Lenguajes de Programación</h3>
                     <p>JavaScript, Java, C#</p>
@@ -122,13 +162,20 @@
             </div>
         </section>
 
-        <!-- Experience Section -->
+        <!-- ======================================================
+         EXPERIENCE SECTION (EXPERIENCIA LABORAL)
+         ====================================================== -->
         <section id="experience" class="fade-in">
+            <!-- Título de la sección que muestra tu trayectoria laboral -->
             <h2><i class="fas fa-briefcase"></i> Experiencia</h2>
 
+            <!-- Primer bloque de experiencia laboral -->
             <div class="job">
+                <!-- Rol y empresa -->
                 <h3><i class="fas fa-warehouse"></i> Gestor de Almacén - MELDtecnia, Sevilla, Sevilla provincia</h3>
+                <!-- Periodo de tiempo en el cargo -->
                 <p><em>enero 2022 a febrero 2023</em></p>
+                <!-- Lista de responsabilidades y tareas realizadas -->
                 <ul>
                     <li><i class="fas fa-check"></i> Gestión de pedidos de entrada y salida, asegurando el correcto
                         flujo logístico.</li>
@@ -141,6 +188,7 @@
                 </ul>
             </div>
 
+            <!-- Segundo bloque de experiencia laboral -->
             <div class="job">
                 <h3><i class="fas fa-car"></i> Técnico de Montaje de Vehículos en Fábrica de Carrocería - BMW, Munich,
                     Alemania</h3>
@@ -153,6 +201,7 @@
                 </ul>
             </div>
 
+            <!-- Tercer bloque de experiencia laboral -->
             <div class="job">
                 <h3><i class="fas fa-tools"></i> Becario de Prácticas en Empresa de Cuadros Eléctricos - Gómez Maqueda,
                     Sevilla, Sevilla provincia</h3>
@@ -166,6 +215,7 @@
                 </ul>
             </div>
 
+            <!-- Cuarto bloque de experiencia laboral -->
             <div class="job">
                 <h3><i class="fas fa-concierge-bell"></i> Camarero de Barra y Friegaplatos - Mesón "Las Torres",
                     Sevilla, Sevilla provincia</h3>
@@ -178,6 +228,7 @@
                 </ul>
             </div>
 
+            <!-- Quinto bloque de experiencia laboral -->
             <div class="job">
                 <h3><i class="fas fa-satellite-dish"></i> Becario de Prácticas en Instalación y Mantenimiento de Antenas
                     - Antenas Cano, Sevilla, Sevilla provincia</h3>
@@ -190,6 +241,7 @@
                 </ul>
             </div>
 
+            <!-- Sexto bloque de experiencia laboral -->
             <div class="job">
                 <h3><i class="fas fa-hands-helping"></i> Voluntariado en "SOFIA Refugio-Escuela" - Sevilla, Sevilla
                     provincia</h3>
@@ -202,6 +254,7 @@
                 </ul>
             </div>
 
+            <!-- Séptimo bloque de experiencia laboral -->
             <div class="job">
                 <h3><i class="fas fa-utensils"></i> Camarero de Barra - Estadio Sevilla FC, Sevilla, Sevilla provincia
                 </h3>
@@ -214,6 +267,7 @@
                 </ul>
             </div>
 
+            <!-- Octavo bloque de experiencia laboral -->
             <div class="job">
                 <h3><i class="fas fa-broom"></i> Becario de Prácticas en Limpieza y Mantenimiento General - Grupo EULEN,
                     Sevilla, Sevilla provincia</h3>
@@ -228,13 +282,21 @@
             </div>
         </section>
 
-        <!-- Education Section -->
+        <!-- ======================================================
+         EDUCATION SECTION (EDUCACIÓN)
+         ====================================================== -->
         <section id="education" class="fade-in">
+            <!-- Título de la sección de educación con un icono -->
             <h2><i class="fas fa-graduation-cap"></i> Educación</h2>
+
+            <!-- Primer bloque de educación -->
             <div class="education-item">
+                <!-- Título que indica la formación y la institución -->
                 <h3><i class="fas fa-school"></i> FP Grado Superior en Desarrollo de Aplicaciones Web - ADA ITS, Sevilla
                 </h3>
+                <!-- Periodo de estudio -->
                 <p><em>septiembre 2023 a Presente</em></p>
+                <!-- Lista de aprendizajes y competencias adquiridas -->
                 <ul>
                     <li><i class="fas fa-check"></i> Desarrollo de aplicaciones frontend y backend utilizando
                         tecnologías modernas.</li>
@@ -244,6 +306,8 @@
                     <li><i class="fas fa-check"></i> Creación de interfaces de usuario responsivas y accesibles.</li>
                 </ul>
             </div>
+
+            <!-- Segundo bloque de educación -->
             <div class="education-item">
                 <h3><i class="fas fa-school"></i> FP Grado Superior en Técnico Superior en Sistemas Electrotécnicos y
                     Automatizados - Colegio Altair, Sevilla</h3>
@@ -259,6 +323,8 @@
                     </li>
                 </ul>
             </div>
+
+            <!-- Tercer bloque de educación -->
             <div class="education-item">
                 <h3><i class="fas fa-school"></i> FP Grado Superior en Técnico en Instalaciones de Telecomunicaciones -
                     ADA ITS, Sevilla</h3>
@@ -274,6 +340,8 @@
                     </li>
                 </ul>
             </div>
+
+            <!-- Cuarto bloque de educación -->
             <div class="education-item">
                 <h3><i class="fas fa-school"></i> FP Básica en Electricidad - Colegio Patronato Vereda, Valdezorras,
                     Sevilla</h3>
@@ -289,70 +357,112 @@
             </div>
         </section>
 
-        <!-- Projects Section con Filtros -->
+        <!-- ======================================================
+         PROJECTS SECTION (PROYECTOS)
+         ====================================================== -->
         <section id="projects" class="fade-in">
+            <!-- Título de la sección de proyectos -->
             <h2><i class="fas fa-code"></i> Proyectos</h2>
+            <!-- Contenedor que agrupa las tarjetas de proyectos -->
             <div class="projects-container">
+                <!-- Primer proyecto: Framework de automatización de pruebas -->
                 <div class="project backend">
                     <h3><i class="fas fa-cogs"></i> Framework de automatizacion de pruebas con Selenium</h3>
-                    <p>Desarrollé un framework de automatización de pruebas en Java utilizando Selenium WebDriver y
+                    <!-- Descripción del proyecto y sus funcionalidades -->
+                    <p>
+                        Desarrollé un framework de automatización de pruebas en Java utilizando Selenium WebDriver y
                         TestNG, gestionado con Maven. Orientado al ámbito educativo, el proyecto facilita la
                         automatización de pruebas de aplicaciones web, la gestión eficiente de casos de prueba y la
                         generación de reportes detallados con Allure. Este framework permite interactuar con elementos
                         web, estructurar y ejecutar pruebas de manera organizada, y enseñar conceptos fundamentales de
-                        la automatización de pruebas.</p>
+                        la automatización de pruebas.
+                    </p>
+                    <!-- Enlace al repositorio del proyecto en GitHub -->
                     <a href="https://github.com/Bluexerry/ProyectoAutomatizacion" class="github-button" target="_blank">
                         <i class="fab fa-github"></i> Ver en GitHub</a>
                 </div>
+
+                <!-- Segundo proyecto: Panel avanzado de gestión de miembros -->
                 <div class="project frontend">
                     <h3><i class="fas fa-laptop-code"></i> Panel avanzado de gestion de miembros</h3>
-                    <p>El proyecto Guild Management es una aplicación web desarrollada con React para gestionar miembros
-                        de una guild y administrar grupos para actividades. Ofrece funcionalidades como añadir, editar y
-                        listar miembros, crear y gestionar partidos, y un sistema de notificaciones para informar sobre
-                        el estado de las operaciones. Utiliza React Router para la navegación, CSS modular para los
-                        estilos y Jest junto con React Testing Library para las pruebas. La estructura del proyecto está
-                        organizada de manera modular, facilitando la escalabilidad y el mantenimiento.</p>
+                    <p>
+                        El proyecto Guild Management es una aplicación web desarrollada con React para gestionar
+                        miembros de una guild y administrar grupos para actividades. Ofrece funcionalidades como añadir,
+                        editar y listar miembros, crear y gestionar partidos, y un sistema de notificaciones para
+                        informar sobre el estado de las operaciones. Utiliza React Router para la navegación, CSS
+                        modular para los estilos y Jest junto con React Testing Library para las pruebas. La estructura
+                        del proyecto está organizada de manera modular, facilitando la escalabilidad y el mantenimiento.
+                    </p>
                     <a href="https://github.com/Bluexerry/EC-JesusManuelVazquezHerrera/tree/main/T1/SPRINT_4"
                         class="github-button" target="_blank">
                         <i class="fab fa-github"></i> Ver en GitHub</a>
                 </div>
+
+                <!-- Tercer proyecto: Aplicacion multiplataforma con .NET MAUI -->
                 <div class="project fullstack">
                     <h3><i class="fas fa-mobile-alt"></i> Aplicacion multiplataforma con .NET MAUI</h3>
-                    <p>Aplicación multiplataforma desarrollada con .NET MAUI (Multi-platform App UI), orientada a
+                    <p>
+                        Aplicación multiplataforma desarrollada con .NET MAUI (Multi-platform App UI), orientada a
                         ofrecer una experiencia unificada en dispositivos Android, iOS, Mac Catalyst y Windows. La
                         aplicación está construida sobre .NET 8, aprovechando las últimas innovaciones y mejoras en
                         rendimiento y seguridad que ofrece esta versión. Esta aplicación consume endpoints de una API
-                        previamnete publicada.</p>
+                        previamnete publicada.
+                    </p>
                     <a href="https://github.com/Bluexerry/MiApp" class="github-button" target="_blank">
                         <i class="fab fa-github"></i> Ver en GitHub</a>
                 </div>
+
+                <!-- Cuarto proyecto: API en .NET8 -->
                 <div class="project backend">
                     <h3><i class="fas fa-cloud"></i> API diseñada sobre .NET8 en C#</h3>
-                    <p>Proyecto API RESTful desarrollada en C# sobre .NET 8, diseñada para consumir la API externa de
+                    <p>
+                        Proyecto API RESTful desarrollada en C# sobre .NET 8, diseñada para consumir la API externa de
                         The Simpsons Quote. Su objetivo es ofrecer tres rutas principales para obtener frases de
                         personajes de Los Simpsons, ya sea de forma aleatoria, filtradas por personaje o en una cantidad
-                        específica. Todas las respuestas se devuelven en formato JSON.</p>
+                        específica. Todas las respuestas se devuelven en formato JSON.
+                    </p>
                     <a href="https://github.com/Bluexerry/API" class="github-button" target="_blank">
                         <i class="fab fa-github"></i> Ver en GitHub</a>
                 </div>
             </div>
         </section>
 
-        <!-- Contact Section -->
+        <!-- ======================================================
+         CONTACT SECTION (FORMSPREE)
+         ====================================================== -->
         <section id="contact" class="fade-in">
+            <!-- Título de la sección de contacto -->
             <h2><i class="fas fa-address-book"></i> Contacto</h2>
+            <!-- Lista de datos de contacto -->
             <ul>
                 <li><strong>Nombre:</strong> Jesús Manuel Vázquez Herrera</li>
-                <li><strong>Email:</strong> <a href="mailto:jesusma33va@gmail.com"><i class="fas fa-envelope"></i>
-                        jesusma33va@gmail.com</a></li>
-                <li><strong>Teléfono:</strong> <a href="tel:+341234567890"><i class="fas fa-phone"></i> --- --- ---</a>
+                <li>
+                    <strong>Email:</strong>
+                    <a href="mailto:jesusma33va@gmail.com">
+                        <i class="fas fa-envelope"></i> jesusma33va@gmail.com
+                    </a>
                 </li>
-                <li><strong>LinkedIn:</strong> <a
-                        href="https://www.linkedin.com/in/jes%C3%BAs-manuel-v%C3%A1zquez-herrera-8191462a3/"
-                        target="_blank"><i class="fab fa-linkedin"></i> Perfil personal</a></li>
-                <li><strong>GitHub:</strong> <a href="https://github.com/Bluexerry?tab=repositories" target="_blank"><i
-                            class="fab fa-github"></i> Bluexerry</a></li>
+                <li>
+                    <strong>Teléfono:</strong>
+                    <a href="tel:+341234567890">
+                        <i class="fas fa-phone"></i> --- --- ---
+                    </a>
+                </li>
+                <li>
+                    <strong>LinkedIn:</strong>
+                    <a href="https://www.linkedin.com/in/jes%C3%BAs-manuel-v%C3%A1zquez-herrera-8191462a3/"
+                        target="_blank">
+                        <i class="fab fa-linkedin"></i> Perfil personal
+                    </a>
+                </li>
+                <li>
+                    <strong>GitHub:</strong>
+                    <a href="https://github.com/Bluexerry?tab=repositories" target="_blank">
+                        <i class="fab fa-github"></i> Bluexerry
+                    </a>
+                </li>
             </ul>
+            <!-- Formulario de contacto utilizando Formspree para gestionar envíos -->
             <form action="https://formspree.io/f/mwkajezb" method="POST" class="contact-form"
                 aria-label="Formulario de Contacto">
                 <label for="name"><i class="fas fa-user"></i> Nombre:</label>
@@ -367,28 +477,34 @@
                 <button type="submit"><i class="fas fa-paper-plane"></i> Enviar</button>
             </form>
         </section>
-    </main>
 
-    <!-- Footer -->
-    <footer role="contentinfo">
-        <div class="footer-info">
-            <p>&copy; 2025 Jesús Manuel Vázquez Herrera.</p>
-        </div>
-        <div class="footer-icons">
-            <a href="https://www.linkedin.com/in/jes%C3%BAs-manuel-v%C3%A1zquez-herrera-8191462a3/" target="_blank" aria-label="LinkedIn">
-                <i class="fab fa-linkedin"></i>
-            </a>
-            <a href="https://github.com/Bluexerry" target="_blank" aria-label="GitHub">
-                <i class="fab fa-github"></i>
-            </a>
-            <a href="https://twitter.com/" target="_blank" aria-label="Twitter">
-                <i class="fab fa-twitter"></i>
-            </a>
-        </div>
-    </footer>
+        <!-- ======================================================
+        FOOTER SECTION (PIE DE PÁGINA)
+         ====================================================== -->
+        <footer role="contentinfo">
+            <!-- Información general en el footer -->
+            <div class="footer-info">
+                <p>&copy; 2025 Jesús Manuel Vázquez Herrera.</p>
+            </div>
+            <!-- Iconos y enlaces a redes sociales -->
+            <div class="footer-icons">
+                <a href="https://www.linkedin.com/in/jes%C3%BAs-manuel-v%C3%A1zquez-herrera-8191462a3/" target="_blank"
+                    aria-label="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/Bluexerry" target="_blank" aria-label="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://twitter.com/" target="_blank" aria-label="Twitter">
+                    <i class="fab fa-twitter"></i>
+                </a>
+            </div>
+        </footer>
 
-    <script src="scripts.js"></script>
-    <script src="particles-config.js"></script>
+        <!-- Scripts -->
+        <!-- Se cargan los scripts que gestionan la funcionalidad del menú, validación de formularios y animaciones (Particles.js) -->
+        <script src="scripts.js"></script>
+        <script src="particles-config.js"></script>
 </body>
 
 </html>
