@@ -1,4 +1,8 @@
-/* Variables CSS */
+/* ================================
+   VARIABLES CSS
+   ================================
+   Se definen variables para colores y otros estilos, lo que facilita la modificación y coherencia de la temática.
+*/
 :root {
     --primary-color: #1abc9c;
     --secondary-color: #16a085;
@@ -12,7 +16,11 @@
     --shadow-color: rgba(0, 0, 0, 0.4);
 }
 
-/* Reset some basic elements */
+/* ================================
+   RESET Y CONFIGURACIÓN BÁSICA
+   ================================
+   Se reinician algunos estilos básicos y se establecen normas generales para todos los elementos.
+*/
 * {
     box-sizing: border-box;
 }
@@ -24,9 +32,9 @@ body {
     padding: 0;
     line-height: 1.6;
     background-color: var(--background-color);
-    /* Fondo oscuro complementado con particles */
+    /* Fondo oscuro para resaltar el contenido */
     color: var(--text-color);
-    /* Color de texto claro para contraste */
+    /* Texto claro para buen contraste */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -35,7 +43,11 @@ body {
     transition: background-color 0.5s ease, color 0.5s ease;
 }
 
-/* Particles.js container */
+/* ================================
+   CONTENEDOR DE PARTICLES.JS
+   ================================
+   Configura el fondo animado de partículas.
+*/
 #particles-js {
     position: fixed;
     width: 100%;
@@ -47,6 +59,11 @@ body {
     transition: background-color 0.5s ease;
 }
 
+/* ================================
+   CABECERA Y NAVEGACIÓN PRINCIPAL
+   ================================
+   Define estilos para la navegación y logo.
+*/
 nav {
     display: flex;
     justify-content: space-between;
@@ -62,7 +79,11 @@ nav {
     letter-spacing: 2px;
 }
 
-/* Navegación */
+/* ================================
+   ESTILOS PARA LOS ENLACES DE NAVEGACIÓN
+   ================================
+   Se establecen estilos con transiciones para los links de navegación.
+*/
 .nav-links {
     list-style: none;
     display: flex;
@@ -74,7 +95,7 @@ nav {
 
 .nav-links.active {
     max-height: 500px;
-    /* Suficiente para mostrar todos los enlaces */
+    /* Espacio suficiente para mostrar todos los enlaces */
 }
 
 .nav-links li a {
@@ -93,6 +114,7 @@ nav {
     outline: none;
 }
 
+/* Línea decorativa animada debajo de los enlaces */
 .nav-links li a::after {
     content: '';
     position: absolute;
@@ -114,12 +136,11 @@ nav {
     color: var(--hover-color);
 }
 
-/* Transiciones suaves para nav-links */
-.nav-links a.active::after {
-    width: 100%;
-}
-
-/* Main content container */
+/* ================================
+   CONTENEDOR PRINCIPAL (MAIN)
+   ================================
+   Define el diseño y márgenes del contenido principal.
+*/
 main {
     max-width: 1200px;
     width: 100%;
@@ -128,20 +149,23 @@ main {
     align-items: center;
     transition: padding 0.5s ease;
     margin-left: 250px;
-    /* Same as sidebar width */
+    /* Ancho igual al de la sidebar */
     padding: 20px;
 }
 
-/* Secciones */
+/* ================================
+   ESTILOS PARA LAS SECCIONES
+   ================================
+   Cada sección cuenta con fondo, bordes redondeados y animación al mostrarse.
+*/
 section {
     background-color: #22303E;
-    /* Fondo completamente opaco */
     padding: 30px 40px;
     margin: 30px 0;
     border-radius: 12px;
     box-shadow: 0 6px 20px var(--shadow-color);
     opacity: 0;
-    /* Iniciar oculto para animación */
+    /* Inicialmente oculto para animación */
     transform: translateY(30px);
     transition: opacity 1s ease-out, transform 1s ease-out;
     width: 100%;
@@ -161,7 +185,11 @@ section h2 {
     color: var(--hover-color);
 }
 
-/* Habilidades */
+/* ================================
+   ESTILOS PARA LAS HABILIDADES
+   ================================
+   Configuración del contenedor de habilidades y tarjetas individuales.
+*/
 .skills-container {
     display: flex;
     flex-wrap: wrap;
@@ -171,7 +199,7 @@ section h2 {
 
 .skill-category {
     background-color: var(--background-color);
-    /* Fondo sólido para ocultar partículas */
+    /* Fondo sólido para contrastar con partículas */
     padding: 20px;
     border-radius: 8px;
     width: 48%;
@@ -184,7 +212,6 @@ section h2 {
 .skill-category:hover,
 .skill-category:focus-within {
     transform: none;
-    /* Eliminada la transformación al pasar el ratón */
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
@@ -206,7 +233,11 @@ section h2 {
     color: #bdc3c7;
 }
 
-/* Experiencia y Educación */
+/* ================================
+   ESTILOS PARA EXPERIENCIA Y EDUCACIÓN
+   ================================
+   Configura la presentación de items de experiencia laboral y educación.
+*/
 .job,
 .education-item {
     margin-bottom: 25px;
@@ -255,6 +286,11 @@ section h2 {
     color: #bdc3c7;
 }
 
+/* ================================
+   PROYECTOS
+   ================================
+   Configuración de contenedores y tarjetas para proyectos.
+*/
 .projects-container {
     display: flex;
     flex-wrap: wrap;
@@ -294,7 +330,6 @@ section h2 {
 .github-button:hover,
 .github-button:focus {
     background-color: var(--secondary-color);
-    /* Darker vibrant red */
 }
 
 .project:hover,
@@ -347,7 +382,11 @@ section h2 {
     outline: none;
 }
 
-/* Contact */
+/* ================================
+   CONTACTO
+   ================================
+   Estilos para la sección de contacto y el formulario.
+*/
 #contact ul {
     list-style: none;
     padding: 0;
@@ -364,7 +403,6 @@ section h2 {
 #contact ul li i {
     margin-right: 8px;
     color: var(--primary-color);
-    /* Ajusta el color según tu diseño */
 }
 
 #contact ul li a {
@@ -379,7 +417,7 @@ section h2 {
     outline: none;
 }
 
-/* Contact Form */
+/* Contact Form Styles */
 .contact-form {
     display: flex;
     flex-direction: column;
@@ -397,7 +435,6 @@ section h2 {
 .contact-form label i {
     margin-right: 8px;
     color: var(--primary-color);
-    /* Ajusta el color según tu diseño */
 }
 
 .contact-form input,
@@ -439,7 +476,11 @@ section h2 {
     outline: none;
 }
 
-/* Footer */
+/* ================================
+   FOOTER
+   ================================
+   Estilos para el pie de página.
+*/
 footer {
     background-color: rgba(26, 188, 156, 1);
     color: #fff;
@@ -481,34 +522,42 @@ footer {
     transform: scale(1.1);
 }
 
-/* Smooth Scrolling */
+/* ================================
+   SMOOTH SCROLLING
+   ================================
+   Permite un desplazamiento suave al navegar la página.
+*/
 html {
     scroll-behavior: smooth;
 }
 
-/* Iconos en la sección Contacto */
+/* ================================
+   ICONOS EN LA SECCIÓN CONTACTO
+   ================================
+   Aplica estilos específicos para íconos de la sección de contacto.
+*/
 #contact ul li i {
     margin-right: 8px;
     color: var(--primary-color);
-    /* Ajusta el color según tu diseño */
 }
 
-/* Enhanced Sidebar Styling */
+/* ================================
+   SIDEBAR
+   ================================
+   Estilos para la barra lateral con información y navegación.
+*/
 .sidebar {
     position: fixed;
     top: 49%;
     left: 70px;
-    /* Ajustado más a la derecha */
+    /* Posicionado ligeramente a la derecha */
     transform: translateY(-50%);
     width: 350px;
     background-color: #2c3e50;
-    /* Fondo oscuro y elegante */
     color: #ecf0f1;
     border-radius: 15px;
-    /* Bordes ligeramente redondeados */
     padding: 20px;
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
-    /* Sombra sutil */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -583,17 +632,20 @@ html {
 .sidebar-nav ul li a:focus {
     background-color: #34495e;
     color: #27ae60;
-    /* Verde más oscuro al hover */
     transform: translateX(5px);
 }
 
-/* Active Link Indicator */
+/* Indicador de enlace activo en la sidebar */
 .sidebar-nav ul li a.active {
     background-color: #27ae60;
     color: #2c3e50;
 }
 
-/* Estilos para el Overlay */
+/* ================================
+   OVERLAY
+   ================================
+   Capa semitransparente para bloquear la interacción con el fondo y cerrar el menú lateral.
+*/
 .overlay {
     position: fixed;
     top: 0;
@@ -608,24 +660,31 @@ html {
     /* Debajo del botón toggle y por encima de otros contenidos */
 }
 
-/* Estado Activo del Overlay */
 .overlay.active {
     opacity: 1;
     visibility: visible;
 }
 
-/* Estado Activo de la Sidebar */
+/* Estado activo de la Sidebar (para animación de entrada) */
 .sidebar.active {
     transform: translateX(0);
     transition: transform 0.3s ease;
 }
 
-/* Ocultar el botón toggle por defecto */
+/* ================================
+   BOTÓN MENU TOGGLE
+   ================================
+   Se oculta el botón en pantallas grandes y se muestran estilos específicos en dispositivos móviles.
+*/
 .menu-toggle {
     display: none;
 }
 
-/* Estilos para los íconos de Font Awesome */
+/* ================================
+   ICONOS (FONT AWESOME)
+   ================================
+   Estilos para iconos, añadiendo transiciones y efectos hover.
+*/
 .fas,
 .fab {
     margin-right: 8px;
@@ -641,11 +700,16 @@ html {
     transform: scale(1.1);
 }
 
-/* Estilo específico para iconos dentro de secciones */
+/* Iconos dentro de secciones */
 section i {
     margin-right: 8px;
 }
 
+/* ================================
+   ANIMACIÓN DE OLA
+   ================================
+   Animación para el botón toggle en pantallas pequeñas.
+*/
 @keyframes wave {
     0% {
         transform: translateX(0) translateY(0);
@@ -668,10 +732,14 @@ section i {
     }
 }
 
-/* Responsividad */
+/* ================================
+   RESPONSIVIDAD
+   ================================
+   Se adaptan los estilos para diferentes tamaños de pantalla.
+*/
 @media (max-width: 820px) {
 
-    /* Ocultar la Sidebar por Defecto */
+    /* Sidebar Oculta por defecto y ajustada en móviles */
     .sidebar {
         transform: translateX(-100%);
         transition: transform 0.3s ease;
@@ -688,16 +756,12 @@ section i {
 
     .sidebar-info h2 {
         font-size: 1rem;
-        /* Reduce el tamaño de fuente */
         white-space: nowrap;
-        /* Evita que el texto se rompa en varias líneas */
     }
 
     .sidebar-info p {
         font-size: 0.80rem;
-        /* Reduce el tamaño de fuente */
         white-space: nowrap;
-        /* Evita que el texto se rompa en varias líneas */
     }
 
     .sidebar-nav li a {
@@ -705,7 +769,7 @@ section i {
         margin-bottom: 15px;
     }
 
-    /* Estilos para el Botón de Menú Toggle */
+    /* Botón de menú toggle visible en móviles */
     .menu-toggle {
         position: fixed;
         top: -20px;
@@ -719,15 +783,12 @@ section i {
         font-size: 24px;
         cursor: pointer;
         display: flex;
-        /* Asegura que el botón sea visible en pantallas pequeñas */
         align-items: center;
         justify-content: center;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
         z-index: 1000;
-        /* Por encima de la sidebar y el overlay */
         transition: background-color 0.3s ease, transform 0.3s ease;
         animation: wave 3s ease-in-out infinite;
-        /* Añade la animación de ondas */
     }
 
     .menu-toggle:hover,
@@ -737,8 +798,7 @@ section i {
         outline: none;
     }
 
-
-    /* Overlay que Solo Oscurece el Contenido Principal */
+    /* Overlay en móviles: se activa para bloquear el contenido al mostrar la sidebar */
     .overlay {
         position: fixed;
         top: 0;
@@ -750,23 +810,18 @@ section i {
         visibility: hidden;
         transition: opacity 0.3s ease, visibility 0.3s ease;
         z-index: 1002;
-        /* Menor que la sidebar */
         pointer-events: none;
-        /* Permite interacción con la sidebar cuando el overlay no está activo */
     }
 
-    /* Estado Activo de la Sidebar */
     .sidebar.active {
         transform: translateX(0);
-        /* Despliega la sidebar */
     }
 
-    /* Estado Activo del Overlay */
     .overlay.active {
         opacity: 1;
         visibility: visible;
         pointer-events: auto;
-        /* Permite cerrar el menú al hacer clic en el overlay */
+        /* Permite cerrar la sidebar haciendo clic en el overlay */
     }
 
     footer {
@@ -782,17 +837,13 @@ section i {
         text-align: center;
     }
 
-    /* Centrar el contenido principal */
+    /* Ajusta el contenedor principal en móviles */
     main {
         margin-left: 0;
         padding: 20px;
         display: flex;
         flex-direction: column;
         align-items: center;
-    }
-
-    /* Opcional: Ajustar la anchura máxima para pantallas pequeñas */
-    main {
         max-width: 100%;
     }
 
@@ -810,17 +861,11 @@ section i {
     }
 }
 
-ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-ul li {
-    list-style-type: none;
-}
-
-/* Extiende el rango de pantallas medianas para incluir resoluciones de portátiles */
+/* ================================
+   MEDIA QUERIES PARA PANTALLAS MEDIANAS
+   ================================
+   Se adapta la sidebar y el main para resoluciones de portátiles.
+*/
 @media (min-width: 820px) and (max-width: 1559px) {
     .sidebar {
         transform: translateX(-100%);
@@ -829,7 +874,6 @@ ul li {
         left: 23.5%;
         height: 82%;
         width: 320px;
-        /* Aumentado de 250px a 300px */
         background-color: var(--background-color);
         z-index: 1003;
         border-radius: 10px;
@@ -837,33 +881,40 @@ ul li {
 
     .sidebar-info h2 {
         font-size: 1rem;
-        /* Reduce el tamaño de fuente */
         white-space: nowrap;
-        /* Evita que el texto se rompa en varias líneas */
         overflow: hidden;
-        /* Oculta el contenido que sobrepase el ancho */
     }
 
     .sidebar-nav li a {
         font-size: 1rem !important;
-        /* Reduce el tamaño de fuente de los links */
         padding: 6px 10px !important;
-        /* Ajusta el padding para un espacio más compacto */
         margin-top: 5px;
         margin-bottom: 5px;
     }
 
-    /* Main content container */
     main {
         max-width: 1100px;
-        /* Se reduce un poco el ancho máximo */
         width: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
         transition: padding 0.5s ease;
         margin-left: 300px;
-        /* Se acerca el main más a la derecha */
         padding: 40px;
     }
+}
+
+/* ================================
+   RESET DE ESTILOS PARA LISTAS (ADICIONAL)
+   ================================
+   Se eliminan estilos por defecto de listas.
+*/
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+ul li {
+    list-style-type: none;
 }
